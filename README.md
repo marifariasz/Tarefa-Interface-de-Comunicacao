@@ -1,52 +1,52 @@
-# ✨ Tarefa06-Protocolo de Comunicação
+# 📡 Comunicação Serial com RP2040 – Projeto com BitDogLab  
 
-<p align="center"> Repositório dedicado a Tarefa 06 do processo de capacitação do EmbarcaTech que envolve protocolos de comunicação na placa Raspberry Pi Pico W por meio da Plataforma BitDogLab.</p>
+Este projeto explora as interfaces de comunicação serial no microcontrolador **RP2040**, utilizando a placa **BitDogLab**. Implementamos a comunicação via **UART e I2C**, manipulação de LEDs (comuns e endereçáveis WS2812) e interação com botões utilizando **interrupções** e **debouncing**.  
 
-## :clipboard: Apresentação da tarefa
+## 🛠️ Funcionalidades  
 
-Para consolidar a compreensão dos conceitos relacionados ao uso de protocolos de comunicação no microcontrolador RP2040 e explorar as funcionalidades da placa de desenvolvimento BitDogLab, esta atividade propõe a implementação de um projeto prático envolvendo o envio de informações (caracteres) por meio do monitor serial que por fim são exibidas no display OLED ssd1306, como também, na matriz de led 5x5 ws2818b. Também é implementado interrupções acionadas por botões que controlam os níveis lógicos de LEDs.
+✅ **Modificação da Biblioteca `font.h`**  
+- Adição de caracteres minúsculos personalizados.  
 
-## :dart: Objetivos
+✅ **Entrada de Caracteres via UART**  
+- Recebe caracteres via **Serial Monitor (VS Code)** e os exibe no **display OLED SSD1306**.  
+- Se um número (0-9) for digitado, um **símbolo correspondente** será exibido na matriz de LEDs **5x5 WS2812**.  
 
-- Compreender o funcionamento e a aplicação de protocolos de comunicação em microcontroladores;
+✅ **Interação com Botões**  
+- **Botão A (GPIO 5):** Alterna o LED Verde do **LED RGB** e exibe mensagens no **display** e **Serial Monitor**.  
+- **Botão B (GPIO 6):** Alterna o LED Azul do **LED RGB** e exibe mensagens no **display** e **Serial Monitor**.  
 
-- Compreender o funcionamento e a aplicação de interrupções em microcontroladores;
+## 🔧 Componentes Utilizados  
 
-- Implementar a técnica de debouncing via software para eliminar o efeito de bouncing em botões;
+| Componente | Conexão |  
+|------------|---------|  
+| Matriz WS2812 (5x5) | GPIO 7 |  
+| LED RGB | GPIOs 11, 12, 13 |  
+| Botão A | GPIO 5 |  
+| Botão B | GPIO 6 |  
+| Display SSD1306 (I2C) | GPIOs 14, 15 |  
 
-- Controlar e informar o estado lógico de LEDs por meio de botões
+## 📌 Requisitos Técnicos  
 
-- Manipular e controlar LEDs comuns e LEDs endereçáveis WS2812;
+⚡ **Interrupções:** Todos os eventos dos botões são tratados via **IRQ**.  
+🛑 **Debouncing:** Implementação por software para evitar leituras erradas dos botões.  
+💡 **Controle de LEDs:** Uso de LEDs comuns e WS2812 com diferentes tipos de controle.  
+📟 **Uso do Display OLED:** Exibição de caracteres maiúsculos, minúsculos e símbolos.  
+🔗 **Envio de Informações via UART:** Comunicação serial entre o microcontrolador e o PC.  
+📌 **Código Estruturado:** Código modular e bem comentado para fácil compreensão.  
 
-- Toda informação que ocorre no projeto deve ser exibida no display OLED ssd1306;
+## 🚀 Como Rodar o Projeto  
 
-- Modificação da biblioteca font.h (Fora adicionado letras minúsculas).
+1️⃣ **Clone este repositório:**  
+```bash  
+git clone https://github.com/seu-usuario/seu-repositorio.git  
+```
+2️⃣ **Configure seu ambiente de desenvolvimento (VS Code + extensão do RP2040).**
+3️⃣ **Compile e carregue o código na placa BitDogLab.**
+4️⃣ **Utilize o Serial Monitor para testar a comunicação UART.**
+5️⃣ **Interaja com os botões e veja as respostas no display e LEDs.**
 
-## :books: Descrição do Projeto
+## 🎥 Demonstração
+📌 Vídeo de apresentação do projeto
 
-Utiizou-se a placa BitDogLab (que possui o microcontrolador RP2040) para a exibição no display OLED ssd1306 de informações enviadas por meio do monitor serial. Algumas informações enviadas também são mostradas na matriz de led 5x5 (números, especificamente). Os botões acionam interrupções que modificam os estados dos LEDs de forma externa ao *loop* principal.
-
-## :walking: Integrantes do Projeto
-
-- Matheus Pereira Alves
-
-## :bookmark_tabs: Funcionamento do Projeto
-
-- As informações foram repassadas pelo monitor serial com baud rate de 115200 (utilizou-se do Putty);
-- É possível exibir no display as letras de a-z (minúsculas e maiúsculas) e os números;
-- A matriz de LED (GPIO 7) exibe os números de 0-9 quando esses são enviados;
-- O Botão A (GPIO 5) modifica o estado do LED verde por meio de uma interrupção, também envia uma exibição para o monitor serial e display OLED;
-- O Botão B (GPIO 6) modifica o estado do LED azul por meio de uma interrupção, também envia uma exibição para o monitor serial e display OLED;
-- Os botões possuem *Debounce* de 250 ms por meio de *software*;
-- É utilizado I2C e UART para o cumprimento da tarefa.
-
-## :camera: GIF mostrando o funcionamento do programa na placa BitDogLab
-<p align="center">
-  <img src=".github/display.gif" alt="GIF" width="345px" />
-</p>
-
-## :arrow_forward: Vídeo no youtube mostrando o funcionamento do programa na placa BitDogLab
-
-<p align="center">
-    <a href="https://www.youtube.com/watch?v=O4LO5Wcnx7Y">Clique aqui para acessar o vídeo</a>
-</p>
+## 👩‍💻 Desenvolvedora
+Projeto desenvolvido por Mariana Farias da Silva.
