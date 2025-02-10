@@ -46,7 +46,7 @@ git clone https://github.com/seu-usuario/seu-repositorio.git
 5️⃣ **Interaja com os botões e veja as respostas no display e LEDs.**
 
 ## 🎥 Demonstração
-📌 Vídeo de apresentação do projeto
+📌 Vídeo de apresentação do projeto: [Clique aqui](https://youtu.be/OJgjAdRrYYs)
 
 ## 👩‍💻 Desenvolvedora
 Projeto desenvolvido por Mariana Farias da Silva.
