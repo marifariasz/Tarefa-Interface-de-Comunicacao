@@ -41,8 +41,11 @@ Este projeto explora as interfaces de comunicação serial no microcontrolador *
 git clone https://github.com/seu-usuario/seu-repositorio.git  
 ```
 2️⃣ **Configure seu ambiente de desenvolvimento (VS Code + extensão do RP2040).**
+
 3️⃣ **Compile e carregue o código na placa BitDogLab.**
+
 4️⃣ **Utilize o Serial Monitor para testar a comunicação UART.**
+
 5️⃣ **Interaja com os botões e veja as respostas no display e LEDs.**
 
 ## 🎥 Demonstração
